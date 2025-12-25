@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- TITLE BAR ICON -->
+<link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/9/9b/Bncc_logo.png">
+
+<title>BNCC | Bangladesh National Cadet Corps</title>
+
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+/* ================= BASE ================= */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+    font-family:'Roboto',sans-serif;
+    background:#0f1a0f;
+    color:#eee;
+}
+
+/* ================= HERO ================= */
+.hero{
+    height:100vh;
+    background:url("https://upload.wikimedia.org/wikipedia/commons/7/7a/BNCC_parade.jpg") center/cover fixed;
+    position:relative;
+}
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    backdrop-filter:blur(6px);
+    background:rgba(0,0,0,.55);
+}
+.hero-content{
+    position:relative;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+.hero img{
+    width:110px;
+    margin-bottom:20px;
+}
+.hero h1{
+    font-family:'Montserrat',sans-serif;
+    font-size:3.2rem;
+    color:#f5c542;
+    letter-spacing:2px;
+}
+.hero p{
+    margin-top:15px;
+    font-size:1.2rem;
+    max-width:700px;
+}
+
+/* ================= NAV ================= */
+nav{
+    position:sticky;
+    top:0;
+    background:#1f2f1f;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    padding:12px;
+    z-index:999;
+    transition:.3s;
+}
+nav.scrolled{box-shadow:0 6px 20px rgba(0,0,0,.6)}
+nav a{
+    color:#f5c542;
+    text-decoration:none;
+    font-weight:600;
+    margin:6px 10px;
+    padding:6px 10px;
+}
+nav a.active,
+nav a:hover{
+    background:#3a523a;
+    border-radius:4px;
+    color:#fff;
+}
+
+/* ================= SECTIONS ================= */
+section{
+    max-width:1100px;
+    margin:80px auto;
+    padding:30px;
+    background:#1f2f1f;
+    border-left:6px solid #556b2f;
+    border-radius:10px;
+    opacity:0;
+    transform:translateY(60px);
+    transition:1s;
+}
+section.show{
+    opacity:1;
+    transform:none;
+}
+section h2{
+    font-family:'Montserrat',sans-serif;
+    color:#f5c542;
+    font-size:2rem;
+    margin-bottom:20px;
+    border-bottom:3px solid #556b2f;
+    display:inline-block;
+}
+section img{
+    width:100%;
+    border-radius:10px;
+    margin:18px 0;
+    border:3px solid #556b2f;
+}
+
+/* ================= RANK LADDER ================= */
+.rank-ladder{
+    display:flex;
+    flex-direction:column-reverse;
+    gap:10px;
+    max-width:400px;
+}
+.rank{
+    padding:12px;
+    background:#2e442e;
+    border-left:6px solid #f5c542;
+    transition:.4s;
+}
+.rank:hover{
+    transform:scale(1.05);
+    background:#3a523a;
+}
+
+/* ================= WINGS ================= */
+.wings{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+.wing{
+    background:#2a3f2a;
+    padding:20px;
+    border-radius:10px;
+    transition:.4s;
+}
+.wing:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 40px rgba(0,0,0,.6);
+}
+
+/* ================= FOOTER ================= */
+footer{
+    text-align:center;
+    padding:25px;
+    background:#1a271a;
+    border-top:4px solid #556b2f;
+    color:#f5c542;
+}
+
+/* ================= MOBILE ================= */
+.menu-btn{
+    display:none;
+    position:absolute;
+    left:15px;
+    top:15px;
+    font-size:1.8rem;
+    color:#f5c542;
+    cursor:pointer;
+}
+@media(max-width:768px){
+    nav{display:none;flex-direction:column}
+    nav.show{display:flex}
+    .menu-btn{display:block}
+}
+</style>
+</head>
+
+<body>
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<!-- HERO -->
+<div class="hero">
+    <div class="hero-content">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Bncc_logo.png">
+        <h1>Bangladesh National Cadet Corps</h1>
+        <p>Discipline • Leadership • Patriotism</p>
+    </div>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+    <a href="#about">BNCC কী</a>
+    <a href="#history">ইতিহাস</a>
+    <a href="#purpose">উদ্দেশ্য</a>
+    <a href="#wings">শাখা</a>
+    <a href="#ranks">পদবি</a>
+    <a href="#training">প্রশিক্ষণ</a>
+    <a href="#camp">ক্যাম্প</a>
+    <a href="#benefits">সুবিধা</a>
+    <a href="#role">ভূমিকা</a>
+</nav>
+
+<!-- SECTIONS -->
+<section id="about">
+<h2>BNCC কী</h2>
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/BNCC_training.jpg">
+<p>BNCC একটি স্বেচ্ছাসেবী আধা-সামরিক বাহিনী যেখানে শিক্ষার্থীরা শৃঙ্খলা, নেতৃত্ব ও দেশপ্রেমে গড়ে ওঠে।</p>
+</section>
+
+<section id="history">
+<h2>ইতিহাস</h2>
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/69/BNCC_old_parade.jpg">
+<p>BNCC প্রতিষ্ঠিত হয় ১৯৭৯ সালে, প্রতিরক্ষা মন্ত্রণালয়ের অধীনে।</p>
+</section>
+
+<section id="purpose">
+<h2>উদ্দেশ্য</h2>
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/BNCC_drill.jpg">
+<ul>
+<li>দেশপ্রেম ও দায়িত্ববোধ সৃষ্টি</li>
+<li>নেতৃত্ব ও শৃঙ্খলা গঠন</li>
+<li>সশস্ত্র বাহিনীর প্রস্তুতি</li>
+</ul>
+</section>
+
+<section id="wings">
+<h2>BNCC শাখা</h2>
+<div class="wings">
+<div class="wing">
+<h3>Army Wing</h3>
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/BNCC_army.jpg">
+</div>
+<div class="wing">
+<h3>Naval Wing</h3>
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/56/BNCC_naval.jpg">
+</div>
+<div class="wing">
+<h3>Air Wing</h3>
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/89/BNCC_air.jpg">
+</div>
+</div>
+</section>
+
+<section id="ranks">
+<h2>পদবি</h2>
+<div class="rank-ladder">
+<div class="rank">Cadet Under Officer</div>
+<div class="rank">Under Officer</div>
+<div class="rank">Sergeant</div>
+<div class="rank">Corporal</div>
+<div class="rank">Lance Corporal</div>
+<div class="rank">Cadet</div>
+</div>
+</section>
+
+<section id="training">
+<h2>প্রশিক্ষণ</h2>
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/93/BNCC_PT.jpg">
+<p>Physical training, drill, leadership, weapon safety, disaster management।</p>
+</section>
+
+<section id="camp">
+<h2>ক্যাম্প</h2>
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/BNCC_camp.jpg">
+<p>ATC, Combined Camp, National Camp, social service।</p>
+</section>
+
+<section id="benefits">
+<h2>সুবিধা</h2>
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/BNCC_career.jpg">
+<ul>
+<li>সেনা/নৌ/বিমান বাহিনীতে অগ্রাধিকার</li>
+<li>চাকরি ও ভাইভায় সুবিধা</li>
+<li>আত্মবিশ্বাস ও শৃঙ্খলা</li>
+</ul>
+</section>
+
+<section id="role">
+<h2>রাষ্ট্রে ভূমিকা</h2>
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/23/BNCC_national_event.jpg">
+<p>দুর্যোগকালীন সহায়তা, জাতীয় দিবস, সামাজিক সচেতনতা।</p>
+</section>
+
+<footer>
+Prepared by: CADET AHNAF © 2025
+</footer>
+
+<script>
+/* SCROLL ANIMATION + SPY */
+const sections=document.querySelectorAll("section");
+const navLinks=document.querySelectorAll("nav a");
+
+window.addEventListener("scroll",()=>{
+    document.getElementById("navbar")
+    .classList.toggle("scrolled",window.scrollY>50);
+
+    sections.forEach(sec=>{
+        const top=window.scrollY;
+        const offset=sec.offsetTop-200;
+        const height=sec.offsetHeight;
+        if(top>=offset && top<offset+height){
+            navLinks.forEach(l=>l.classList.remove("active"));
+            document.querySelector('nav a[href*='+sec.id+']').classList.add("active");
+        }
+        if(top>offset) sec.classList.add("show");
+    });
+});
+
+function toggleMenu(){
+    document.getElementById("navbar").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>
